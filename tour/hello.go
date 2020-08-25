@@ -24,6 +24,7 @@ func main() {
 	       fmt.Println(vue) */
 	forfor()
 	bo(true)
+	point()
 }
 
 func add(a, b int) int {
@@ -50,4 +51,29 @@ func bo(b bool) {
 	} else {
 		fmt.Println("FALSE")
 	}
+}
+
+func point() {
+	i := 42
+	j := 2701
+
+	// ポインタ参照
+	// iのメモリにある値を読み取る
+	p := &i
+
+	// ポインタpを通してiから値を読みだす
+	fmt.Println(*p)
+
+	// ポインタpを通してiへ値を代入する
+	*p = 21
+
+	fmt.Println(i)
+
+	// ポインタ参照
+	// jのメモリにある値を読み取る
+	p = &j
+
+	// j/37
+	*p = *p / 37
+	fmt.Println(j)
 }
