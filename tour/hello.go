@@ -25,6 +25,9 @@ func main() {
 	forfor()
 	bo(true)
 	point()
+	stackDefer()
+	createBusRoutes()
+	ary()
 }
 
 func add(a, b int) int {
@@ -76,4 +79,38 @@ func point() {
 	// j/37
 	*p = *p / 37
 	fmt.Println(j)
+}
+
+func stackDefer() {
+	fmt.Println("counting")
+
+	for i := 0; i < 10; i++ {
+		defer fmt.Println(i)
+	}
+
+	fmt.Println("done")
+}
+
+//---------------------------------------------
+
+type BusRoute struct {
+	RouteName  string
+	RouteID    string
+	TripCount  int
+	IsMidnight bool
+}
+
+func createBusRoutes() {
+	var route1 = BusRoute{
+		"都01",
+		"Toei.To-01",
+		100,
+		false}
+	fmt.Println(route1.RouteName)
+}
+
+var arr = [2]string{"はろー", "ワールド！"}
+
+func ary() {
+	fmt.Println(arr)
 }
