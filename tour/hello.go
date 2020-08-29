@@ -22,14 +22,14 @@ func main() {
 	   	fmt.Println(c, python, java, name)
 	   	// fmt.Println(n)
 	       fmt.Println(vue) */
-	forfor()
-	bo(true)
-	point()
-	stackDefer()
-	createBusRoutes()
-	ary()
-	rangerange()
-	mapm()
+	// forfor()
+	// bo(true)
+	// point()
+	// stackDefer()
+	// createBusRoutes()
+	// ary()
+	// rangerange()
+	// mapm()
 	createFibonacci()
 }
 
@@ -211,22 +211,39 @@ func mapm() {
 
 }
 
+// フィボナッチ数列を作成する
 func fibonacci() func() int {
+	// 前々項
 	var t1 int = 0
+
+	// 前項
 	var t2 int = 1
+
+	// 現在の項数
 	var i int = 0
 	return func() int {
+		// next : 新たな項
 		next := 0
 		switch {
+		// 第2項
 		case i == 1:
 			next = 1
+
+		// 第1項
 		case i == 0:
 			next = 0
+
+		// それ以外
 		default:
+			// 前々項+前項=新たな項
 			next = t1 + t2
+
+			// 1つずつずらす
 			t1 = t2
 			t2 = next
 		}
+
+		// 項数を追加
 		i++
 		return next
 	}
@@ -234,7 +251,7 @@ func fibonacci() func() int {
 
 func createFibonacci() {
 	f := fibonacci()
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 20; i++ {
 		fmt.Println(f())
 	}
 }
